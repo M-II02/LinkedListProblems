@@ -1,8 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<stdbool.h>
-#define true 1
-#define false 0
 
 struct Node {
     int data;
@@ -67,7 +64,7 @@ struct Node* kPlusOnethEnd( struct Node *head,int k)
 }
 
 //2.Palindrome
- bool checkPalindrome(struct Node *head,struct Node* Mid){
+ int checkPalindrome(struct Node *head,struct Node* Mid){
    struct Node *l=head,*prev=NULL,*m=Mid,*temp;
    //reversing second half
    while(m!=NULL){
@@ -79,12 +76,12 @@ struct Node* kPlusOnethEnd( struct Node *head,int k)
    struct Node *r=prev;
    while(r->add!=NULL){
      if(l->data!=r->data){
-       return false;
+       return 0;
      }
      l=l->add;
      r=r->add;
    }
-   return true;
+   return 1;
  }
  
  //Mid
